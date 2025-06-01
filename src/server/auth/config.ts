@@ -27,7 +27,6 @@ declare module "next-auth" {
     emailVerified?: Date | null;
     image?: string | null;
     password: string; 
-    
   }
   
 }
