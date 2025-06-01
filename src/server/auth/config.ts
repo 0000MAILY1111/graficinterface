@@ -3,7 +3,6 @@ import { type DefaultSession, type NextAuthConfig } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { signInSchema } from "y/schemas";
 import bcrypt from "bcryptjs";
-
 import { db } from "y/server/db";
 
 /**
@@ -28,7 +27,6 @@ declare module "next-auth" {
     image?: string | null;
     password: string; 
   }
-  
 }
 
 /**
