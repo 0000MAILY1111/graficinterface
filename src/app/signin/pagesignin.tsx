@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import  { useActionState } from "react";
-import { register } from "../actions/auth";
+import { register } from "../actions/authactions";
 
 export default function Page() {
     const [errorMessage, formAction, isPending] = useActionState(register, undefined);

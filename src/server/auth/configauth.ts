@@ -4,7 +4,7 @@ import Credentials from "next-auth/providers/credentials";
 import { signInSchema } from "y/schemas";
 import bcrypt from "bcryptjs";
 import { db } from "y/server/db";
-
+///CONFIG AUTH
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
  * object and keep type safety.
@@ -47,9 +47,9 @@ export const authConfig = {
           const user = await db.user.findUnique({
             where: { email },
           });
-          const passwordMatch = await bcrypt.compare(password, (user as any)?.password ?? "");
-          if (!user || !passwordMatch) {
-            throw new Error("Invalid email or password");
+          const passwordMatch = await bcrypt.compare(password, user?.password ?? "");
+          if (!passwordMatch) {
+            return null; // Return null if password does not match
           }
           return user as any; // Return the user object, cast to `any` to satisfy type requirements
         }catch(error) {
