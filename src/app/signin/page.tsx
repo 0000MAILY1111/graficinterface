@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { useActionState } from "react";
 import { authenticate } from "../actions/authactions";
-
+//sign in 
 export default function Page() {
     const [errorMessage, formAction, isPending] = useActionState(authenticate, undefined);
     return (
@@ -14,7 +14,7 @@ export default function Page() {
                 </div>
                 <form action={formAction} className="space-x-4">
                     <input type="hidden" name="redirectTo" value="/dashboard" />
-                    
+
                     <div className="relative h-fit">
                         <input className=" w-full rounded-md border border-gray-300  text-sm px-3 pb-1 pt-7 focus:border-black focus-online:border-black focus:ring-0"
                             type="email" name="email" required />

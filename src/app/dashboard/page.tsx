@@ -1,7 +1,15 @@
+"use client"
+import { signout } from "../actions/authactions"
+
+	
+
 export default function Page () {
     return (
         <>
-         <p> My dashboard </p>
+        <div>
+            <p> My dashboard </p>
+            <button onClick = {()=> signout ()}>Sign out</button>
+        </div>
         </>
     )
 }

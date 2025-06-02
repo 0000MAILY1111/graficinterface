@@ -4,11 +4,10 @@ import bcrypt from "bcryptjs";
 import { AuthError } from "next-auth";
 import { redirect } from "next/navigation";
 import { signUpSchema } from "y/schemas";
-import { signIn } from "y/server/auth";
+import { signIn, signOut } from "y/server/auth";
 import { db } from "y/server/db";
 import { email } from "zod/v4"
 import { ZodError } from "zod";
-import { signOut } from "next-auth/react";
 
 ///authactions ///siguPshcema register 
 export async function signout () {
