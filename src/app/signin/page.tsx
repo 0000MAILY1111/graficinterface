@@ -12,7 +12,9 @@ export default function Page() {
                 <div className="w-full max-w-sm space-y-6 ">
                     <h1 className="text-center text-2xl font-semibold text-gray-900 ">Sign In </h1>
                 </div>
-                <form className="space-x-4 ">
+                <form action={formAction} className="space-x-4">
+                    <input type="hidden" name="redirectTo" value="/dashboard" />
+                    
                     <div className="relative h-fit">
                         <input className=" w-full rounded-md border border-gray-300  text-sm px-3 pb-1 pt-7 focus:border-black focus-online:border-black focus:ring-0"
                             type="email" name="email" required />
